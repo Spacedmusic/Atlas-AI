@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <h2>✦ ATLAS</h2>
+            <p>YOUR PERSONAL AI</p>
+            <button id="newChat">+ New Chat</button>
+            <div class="side-bottom">ATLAS AI v1.0</div>
+        </aside>
+
+        <main class="main">
+            <header>
+                <span>ATLAS</span>
+                <span class="status">● ONLINE</span>
+            </header>
+
+            <section class="welcome" id="welcome">
+                <div class="orb">✦</div>
+                <h1>Welcome to <span>Atlas.</span></h1>
+                <p>Your ideas. Your questions. Your universe.</p>
+            </section>
+
+            <section id="messages" class="messages"></section>
+
+            <form id="chatForm">
+                <input id="userInput"
+                    placeholder="Message Atlas..."
+                    autocomplete="off">
+                <button type="submit">➤</button>
+            </form>
+            <footer>ATLAS AI · PERSONAL ASSISTANT</footer>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
