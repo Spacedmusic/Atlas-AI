@@ -1,44 +1,171 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atlas AI</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas AI</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #070b14;
+    color: #eaf4ff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 20px;
+    border-bottom: 1px solid #15375b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #39aaff;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px #168cff;
+}
+
+.status {
+    color: #36e6a0;
+    font-size: 12px;
+}
+
+main {
+    max-width: 850px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+.welcome {
+    text-align: center;
+    margin: 65px 0 35px;
+}
+
+.welcome h1 {
+    font-size: 38px;
+    color: #46b5ff;
+    text-shadow: 0 0 20px #087cff;
+}
+
+.welcome p {
+    color: #849bb5;
+}
+
+#messages {
+    min-height: 250px;
+    padding: 10px;
+}
+
+.message {
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 12px;
+    max-width: 85%;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.user {
+    background: #10345a;
+    margin-left: auto;
+}
+
+.bot {
+    background: #111e30;
+    border: 1px solid #17416b;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #245582;
+    background: #101a29;
+    color: white;
+    outline: none;
+}
+
+button {
+    padding: 14px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #168cff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45aaff;
+}
+
+#newChat {
+    background: transparent;
+    border: 1px solid #245582;
+}
+
+footer {
+    text-align: center;
+    color: #52677f;
+    font-size: 12px;
+    padding: 25px;
+}
+</style>
 </head>
+
 <body>
-    <div class="app">
-        <aside class="sidebar">
-            <h2>✦ ATLAS</h2>
-            <p>YOUR PERSONAL AI</p>
-            <button id="newChat">+ New Chat</button>
-            <div class="side-bottom">ATLAS AI v1.0</div>
-        </aside>
 
-        <main class="main">
-            <header>
-                <span>ATLAS</span>
-                <span class="status">● ONLINE</span>
-            </header>
+<header>
+    <div class="logo">ATLAS</div>
+    <div class="status">● SYSTEM ONLINE</div>
+</header>
 
-            <section class="welcome" id="welcome">
-                <div class="orb">✦</div>
-                <h1>Welcome to <span>Atlas.</span></h1>
-                <p>Your ideas. Your questions. Your universe.</p>
-            </section>
+<main>
 
-            <section id="messages" class="messages"></section>
-
-            <form id="chatForm">
-                <input id="userInput"
-                    placeholder="Message Atlas..."
-                    autocomplete="off">
-                <button type="submit">➤</button>
-            </form>
-            <footer>ATLAS AI · PERSONAL ASSISTANT</footer>
-        </main>
+    <div class="welcome" id="welcome">
+        <h1>ATLAS AI</h1>
+        <p>Your personal AI assistant.</p>
+        <p>What can I help you with today?</p>
     </div>
-    <script src="app.js"></script>
+
+    <div id="messages"></div>
+
+    <form id="chatForm">
+        <input
+            id="userInput"
+            type="text"
+            placeholder="Ask Atlas anything..."
+            autocomplete="off"
+            required
+        >
+        <button type="submit">SEND</button>
+    </form>
+
+    <br>
+    <button id="newChat" type="button">+ New Chat</button>
+
+</main>
+
+<footer>
+    ATLAS AI • YOUR INTELLIGENT ASSISTANT
+</footer>
+
+<script src="app.js"></script>
+
 </body>
 </html>
