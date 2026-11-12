@@ -49,3 +49,28 @@ function getAtlasResponse(message) {
 
   return "That's an interesting question! I don't have a prepared answer for that yet. Try asking me about math, science, history, or space.";
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  if (!form) return;
+
+  const input = form.querySelector("input:not([type='submit']), textarea");
+  if (!input) return;
+
+  const output = document.createElement("div");
+  output.id = "atlas-response";
+  output.style.cssText = "padding:15px;margin-top:15px;white-space:pre-wrap;";
+  form.insertAdjacentElement("afterend", output);
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const question = input.value.trim();
+    if (!question) return;
+
+    output.textContent = "Atlas: " + getAtlasResponse(question);
+    input.value = "";
+  });
+});
+
